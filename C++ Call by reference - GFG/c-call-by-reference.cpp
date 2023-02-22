@@ -27,7 +27,7 @@ void reverse_dig(int &a,int &b)
     }
     a=rev1;
     b=rev2;
-    swap(rev1,rev2);
+    
     
 }
 void swap(int &a,int &b)
