@@ -18,10 +18,15 @@ class Solution
         // Your code here
         // It can be a one liner logic!! Think of it!!
         n=(n>>k);
-        if(n%2==0)
-            return false;
-        else
-            return true;
+        // if(n%2==0)
+        //     return false;
+        // else
+        //     return true;
+        
+        // or
+        
+        if(n&1) return true;
+        else    return false;
     }
 };
 
