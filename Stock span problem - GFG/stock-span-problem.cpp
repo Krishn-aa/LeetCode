@@ -14,7 +14,7 @@ class Solution
     {
        // Your code here
         vector<int> res;
-        vector<int> idx;
+        
         stack<pair<int,int>> st;
         int i=0;
         while(i<n)
