@@ -49,13 +49,29 @@ class Solution
     bool detectLoop(Node* head)
     {
         // your code here
-        unordered_set<Node*> s;
-        while(head!=NULL){
-            if(s.find(head)==s.end()){
-                s.insert(head); 
-                head=head->next;
-            }
-            else{
+        
+        //Method 1
+        // unordered_set<Node*> s;
+        // while(head!=NULL){
+        //     if(s.find(head)==s.end()){
+        //         s.insert(head); 
+        //         head=head->next;
+        //     }
+        //     else{
+        //         return true;
+        //     }
+        // }
+        // return false;
+        
+        
+        //Method 2
+        Node* slow = head;
+        Node* fast = head;
+        
+        while(slow && fast && fast->next!=NULL){
+            fast=fast->next->next;
+            slow=slow->next;
+            if(slow==fast){
                 return true;
             }
         }
