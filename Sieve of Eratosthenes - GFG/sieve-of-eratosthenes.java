@@ -30,19 +30,25 @@ class GFG
 class Solution{
     static ArrayList<Integer> sieveOfEratosthenes(int N){
         // code here
-        ArrayList<Integer> res = new ArrayList<>();
-        boolean isPrime[] = new boolean[N+1];
-        Arrays.fill(isPrime,true);
+        ArrayList<Integer> res= new ArrayList<>();
+        boolean[] isPrime = new boolean[N+1];
+        for(int i=0;i<=N;i++){
+            isPrime[i]=true;
+        }
         
-        for(int i=2;i<=N;i++){
-            if(isPrime[i]){
-                res.add(i);
+        for(int i=2;i*i<=N;i++){
+            if(isPrime[i]==true){
                 for(int j=i*i;j<=N;j+=i){
                     isPrime[j]=false;
-                    
                 }
             }
         }
+        for(int i=2;i<=N;i++){
+            if(isPrime[i]==true){
+                res.add(i);
+            }
+        }
         return res;
+        
     }
 }
